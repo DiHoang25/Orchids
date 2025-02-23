@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-top: 20px;
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--bg-color); /* Dùng biến màu nền */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  transition: background-color 0.3s;
 }
 
 .App-link {
@@ -35,4 +37,70 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Modal giữ nguyên */
+.modal {
+  z-index: 9999 !important;
+}
+
+/* Light Mode */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --card-bg: white;
+  --card-border: black;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-color: black;
+  --text-color: white;
+  --card-bg: #1e1e1e; /* Màu xám đậm thay vì đen hoàn toàn */
+  --card-border: white;
+}
+
+/* Áp dụng cho toàn trang */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Card */
+.card {
+  background-color: var(--card-bg);
+  color: black !important; /* Luôn là màu đen */
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--card-border);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, border 0.3s;
+}
+/* Xóa quy tắc đổi màu chữ trong Dark Mode */
+[data-theme="dark"] .card {
+  background: var(--card-bg);
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Nút trong card */
+.card button {
+  margin-top: 15px; /* Cách xa nội dung trong card */
+}
+
+/* Nút toggle Dark Mode */
+.theme-toggle {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }

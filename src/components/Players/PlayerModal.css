@@ -1,0 +1,68 @@
+/* Lớp phủ nền mờ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Nội dung modal */
+.modal-content {
+    background-color: var(--card-bg, #fff); /* Mặc định trắng nếu biến không tồn tại */
+    color: var(--text-color, #333);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--card-border, #ddd);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Tiêu đề */
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Hình ảnh cầu thủ */
+.modal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Nút đóng */
+.modal-close-btn {
+    margin-top: 10px;
+    background-color: #e3342f;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #cc1f1a;
+}
+
+/* Hiệu ứng mở modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

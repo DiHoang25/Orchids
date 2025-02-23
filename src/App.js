@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import useTheme from './hooks/useTheme';
 import './App.css';
+import PlayersContainer from './components/Players/PlayersContainer';
+import Contact from './components/Contact';
+import Detail from './components/Detail';
+import Navbar from './components/Navbar';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App" data-theme={theme}>
+        <Navbar />
+        <button onClick={toggleTheme} className="theme-toggle">
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
+        <Routes>
+          <Route path="/" element={<PlayersContainer />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
