@@ -1,50 +1,88 @@
-/* src/components/Navbar.css */
+/* Thanh điều hướng */
 .navbar {
-    background-color: #333;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
+  background-color: #6a1b9a; /* Màu tím nhẹ, tạo cảm giác sang trọng */
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Container chính */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Logo */
+.navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-family: 'Dancing Script', cursive; /* Font nghệ thuật nhẹ nhàng */
+}
+
+.navbar-logo:hover {
+  color: #ffcc80;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mục menu */
+.nav-item {
+  margin-left: 25px;
+}
+
+/* Link trong menu */
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-links:hover {
+  color: #ffcc80; /* Màu vàng pastel khi hover */
+  transform: scale(1.05);
+}
+
+/* Responsive - Menu nhỏ hơn trên màn hình nhỏ */
+@media (max-width: 768px) {
   .nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+      flex-direction: column;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background: #8e44ad;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      display: none;
   }
-  
+
   .nav-item {
-    margin-left: 20px;
+      text-align: center;
+      margin: 10px 0;
   }
-  
-  .nav-links {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
+
+  .nav-menu.active {
+      display: flex;
   }
-  
-  .nav-links:hover {
-    color: #f0a500;
-  }
-  
+}

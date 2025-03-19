@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: var(--bg-color); /* Dùng biến màu nền */
+  background-color: var(--bg-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,12 +39,12 @@
   }
 }
 
-/* Modal giữ nguyên */
+
 .modal {
   z-index: 9999 !important;
 }
 
-/* Light Mode */
+
 :root {
   --bg-color: white;
   --text-color: black;
@@ -60,14 +60,14 @@
   --card-border: white;
 }
 
-/* Áp dụng cho toàn trang */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Card */
+
 .card {
   background-color: var(--card-bg);
   color: black !important; /* Luôn là màu đen */
@@ -83,12 +83,12 @@ body {
   box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
 }
 
-/* Nút trong card */
+
 .card button {
-  margin-top: 15px; /* Cách xa nội dung trong card */
+  margin-top: 15px; 
 }
 
-/* Nút toggle Dark Mode */
+
 .theme-toggle {
   position: absolute;
   top: 0px;
