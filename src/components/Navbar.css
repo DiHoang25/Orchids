@@ -1,6 +1,6 @@
-/* Thanh điều hướng */
+
 .navbar {
-  background-color: #6a1b9a; /* Màu tím nhẹ, tạo cảm giác sang trọng */
+  background-color: #6a1b9a; 
   height: 65px;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Container chính */
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   padding: 0 20px;
 }
 
-/* Logo */
+
 .navbar-logo {
   color: #fff;
   font-size: 1.8rem;
@@ -36,7 +36,7 @@
   color: #ffcc80;
 }
 
-/* Menu */
+
 .nav-menu {
   display: flex;
   list-style: none;
@@ -44,12 +44,12 @@
   padding: 0;
 }
 
-/* Mục menu */
+
 .nav-item {
   margin-left: 25px;
 }
 
-/* Link trong menu */
+
 .nav-links {
   color: #fff;
   text-decoration: none;
@@ -59,11 +59,11 @@
 }
 
 .nav-links:hover {
-  color: #ffcc80; /* Màu vàng pastel khi hover */
+  color: #ffcc80; 
   transform: scale(1.05);
 }
 
-/* Responsive - Menu nhỏ hơn trên màn hình nhỏ */
+
 @media (max-width: 768px) {
   .nav-menu {
       flex-direction: column;

@@ -1,0 +1,33 @@
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.detail-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.detail-info {
+  max-width: 500px;
+}
+
+.add-to-cart {
+  background: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.add-to-cart:hover {
+  background: #e64c4c;
+}

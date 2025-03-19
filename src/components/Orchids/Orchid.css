@@ -47,7 +47,7 @@
 }
 
 .orchid-card:hover {
-  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+  transform: scale(1.05); 
 }
 
 .orchid-image {

@@ -1,29 +1,25 @@
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import useTheme from './hooks/useTheme';
-import './App.css';
-import OrchidContainer from './components/Orchids/OrchidContainer';
-import Contact from './components/Contact';
-import Detail from './components/Detail';
-import Navbar from './components/Navbar';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import DetailPage from "./pages/DetailPage";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Detail from "./pages/Detail";
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <Router>
-      <div className="App" data-theme={theme}>
-        <Navbar />
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === 'light' ? '🌙' : '☀️'}
-        </button>
-        <Routes>
-          <Route path="/" element={<OrchidContainer />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/detail/:id" element={<Detail />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/detailpage/:id" element={<DetailPage />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+      
+        <Route path="*" element={<div>404 - Page Not Found</div>} />
+      </Routes>
     </Router>
   );
 }
